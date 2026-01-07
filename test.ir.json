@@ -1,0 +1,53 @@
+{
+  "type": "Program",
+  "functions": [
+    {
+      "name": "__init__",
+      "body": {
+        "type": "Block",
+        "statements": [
+          {
+            "type": "Assign",
+            "line": 5
+          },
+          {
+            "type": "Assign",
+            "line": 6
+          },
+          {
+            "type": "Assign",
+            "line": 7
+          },
+          {
+            "type": "Assign",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "assign_location",
+      "body": {
+        "type": "Block",
+        "statements": [
+          {
+            "type": "Assign",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "name": "__str__",
+      "body": {
+        "type": "Block",
+        "statements": [
+          {
+            "type": "Return",
+            "line": 14
+          }
+        ]
+      }
+    }
+  ]
+}

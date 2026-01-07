@@ -1,0 +1,440 @@
+{
+  "_type": "Module",
+  "body": [
+    {
+      "_type": "ImportFrom",
+      "module": "entities.location",
+      "names": [
+        {
+          "_type": "alias",
+          "name": "Location",
+          "asname": null
+        }
+      ],
+      "level": 0,
+      "lineno": 1
+    },
+    {
+      "_type": "ClassDef",
+      "name": "Learner",
+      "bases": [],
+      "keywords": [],
+      "body": [
+        {
+          "_type": "FunctionDef",
+          "name": "__init__",
+          "args": {
+            "_type": "arguments",
+            "posonlyargs": [],
+            "args": [
+              {
+                "_type": "arg",
+                "arg": "self",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 4
+              },
+              {
+                "_type": "arg",
+                "arg": "uid",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 4
+              },
+              {
+                "_type": "arg",
+                "arg": "full_name",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 4
+              },
+              {
+                "_type": "arg",
+                "arg": "years",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 4
+              },
+              {
+                "_type": "arg",
+                "arg": "location",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 4
+              }
+            ],
+            "vararg": null,
+            "kwonlyargs": [],
+            "kw_defaults": [],
+            "kwarg": null,
+            "defaults": [
+              {
+                "_type": "Constant",
+                "value": null,
+                "kind": null,
+                "lineno": 4
+              }
+            ]
+          },
+          "body": [
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "self",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 5
+                  },
+                  "attr": "uid",
+                  "ctx": {
+                    "_type": "Store"
+                  },
+                  "lineno": 5
+                }
+              ],
+              "value": {
+                "_type": "Name",
+                "id": "uid",
+                "ctx": {
+                  "_type": "Load"
+                },
+                "lineno": 5
+              },
+              "type_comment": null,
+              "lineno": 5
+            },
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "self",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 6
+                  },
+                  "attr": "full_name",
+                  "ctx": {
+                    "_type": "Store"
+                  },
+                  "lineno": 6
+                }
+              ],
+              "value": {
+                "_type": "Name",
+                "id": "full_name",
+                "ctx": {
+                  "_type": "Load"
+                },
+                "lineno": 6
+              },
+              "type_comment": null,
+              "lineno": 6
+            },
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "self",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 7
+                  },
+                  "attr": "years",
+                  "ctx": {
+                    "_type": "Store"
+                  },
+                  "lineno": 7
+                }
+              ],
+              "value": {
+                "_type": "Name",
+                "id": "years",
+                "ctx": {
+                  "_type": "Load"
+                },
+                "lineno": 7
+              },
+              "type_comment": null,
+              "lineno": 7
+            },
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "self",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 8
+                  },
+                  "attr": "location",
+                  "ctx": {
+                    "_type": "Store"
+                  },
+                  "lineno": 8
+                }
+              ],
+              "value": {
+                "_type": "Name",
+                "id": "location",
+                "ctx": {
+                  "_type": "Load"
+                },
+                "lineno": 8
+              },
+              "type_comment": null,
+              "lineno": 8
+            }
+          ],
+          "decorator_list": [],
+          "returns": null,
+          "type_comment": null,
+          "lineno": 4
+        },
+        {
+          "_type": "FunctionDef",
+          "name": "assign_location",
+          "args": {
+            "_type": "arguments",
+            "posonlyargs": [],
+            "args": [
+              {
+                "_type": "arg",
+                "arg": "self",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 10
+              },
+              {
+                "_type": "arg",
+                "arg": "city",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 10
+              },
+              {
+                "_type": "arg",
+                "arg": "zip_code",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 10
+              }
+            ],
+            "vararg": null,
+            "kwonlyargs": [],
+            "kw_defaults": [],
+            "kwarg": null,
+            "defaults": []
+          },
+          "body": [
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "self",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 11
+                  },
+                  "attr": "location",
+                  "ctx": {
+                    "_type": "Store"
+                  },
+                  "lineno": 11
+                }
+              ],
+              "value": {
+                "_type": "Call",
+                "func": {
+                  "_type": "Name",
+                  "id": "Location",
+                  "ctx": {
+                    "_type": "Load"
+                  },
+                  "lineno": 11
+                },
+                "args": [
+                  {
+                    "_type": "Name",
+                    "id": "city",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 11
+                  },
+                  {
+                    "_type": "Name",
+                    "id": "zip_code",
+                    "ctx": {
+                      "_type": "Load"
+                    },
+                    "lineno": 11
+                  }
+                ],
+                "keywords": [],
+                "lineno": 11
+              },
+              "type_comment": null,
+              "lineno": 11
+            }
+          ],
+          "decorator_list": [],
+          "returns": null,
+          "type_comment": null,
+          "lineno": 10
+        },
+        {
+          "_type": "FunctionDef",
+          "name": "__str__",
+          "args": {
+            "_type": "arguments",
+            "posonlyargs": [],
+            "args": [
+              {
+                "_type": "arg",
+                "arg": "self",
+                "annotation": null,
+                "type_comment": null,
+                "lineno": 13
+              }
+            ],
+            "vararg": null,
+            "kwonlyargs": [],
+            "kw_defaults": [],
+            "kwarg": null,
+            "defaults": []
+          },
+          "body": [
+            {
+              "_type": "Return",
+              "value": {
+                "_type": "JoinedStr",
+                "values": [
+                  {
+                    "_type": "Constant",
+                    "value": "Learner(",
+                    "kind": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "FormattedValue",
+                    "value": {
+                      "_type": "Attribute",
+                      "value": {
+                        "_type": "Name",
+                        "id": "self",
+                        "ctx": {
+                          "_type": "Load"
+                        },
+                        "lineno": 14
+                      },
+                      "attr": "uid",
+                      "ctx": {
+                        "_type": "Load"
+                      },
+                      "lineno": 14
+                    },
+                    "conversion": -1,
+                    "format_spec": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": ", ",
+                    "kind": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "FormattedValue",
+                    "value": {
+                      "_type": "Attribute",
+                      "value": {
+                        "_type": "Name",
+                        "id": "self",
+                        "ctx": {
+                          "_type": "Load"
+                        },
+                        "lineno": 14
+                      },
+                      "attr": "full_name",
+                      "ctx": {
+                        "_type": "Load"
+                      },
+                      "lineno": 14
+                    },
+                    "conversion": -1,
+                    "format_spec": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": ", ",
+                    "kind": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "FormattedValue",
+                    "value": {
+                      "_type": "Attribute",
+                      "value": {
+                        "_type": "Name",
+                        "id": "self",
+                        "ctx": {
+                          "_type": "Load"
+                        },
+                        "lineno": 14
+                      },
+                      "attr": "years",
+                      "ctx": {
+                        "_type": "Load"
+                      },
+                      "lineno": 14
+                    },
+                    "conversion": -1,
+                    "format_spec": null,
+                    "lineno": 14
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": ")",
+                    "kind": null,
+                    "lineno": 14
+                  }
+                ],
+                "lineno": 14
+              },
+              "lineno": 14
+            }
+          ],
+          "decorator_list": [],
+          "returns": null,
+          "type_comment": null,
+          "lineno": 13
+        }
+      ],
+      "decorator_list": [],
+      "lineno": 3
+    }
+  ],
+  "type_ignores": []
+}

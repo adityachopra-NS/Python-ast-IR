@@ -1,0 +1,549 @@
+{
+  "_type": "Module",
+  "body": [
+    {
+      "_type": "Import",
+      "names": [
+        {
+          "_type": "alias",
+          "name": "time",
+          "asname": null
+        }
+      ]
+    },
+    {
+      "_type": "FunctionDef",
+      "name": "allow_request",
+      "args": {
+        "_type": "arguments",
+        "posonlyargs": [],
+        "args": [
+          {
+            "_type": "arg",
+            "arg": "ip",
+            "annotation": null,
+            "type_comment": null
+          },
+          {
+            "_type": "arg",
+            "arg": "hits",
+            "annotation": null,
+            "type_comment": null
+          }
+        ],
+        "vararg": null,
+        "kwonlyargs": [],
+        "kw_defaults": [],
+        "kwarg": null,
+        "defaults": []
+      },
+      "body": [
+        {
+          "_type": "Assign",
+          "targets": [
+            {
+              "_type": "Name",
+              "id": "now",
+              "ctx": {
+                "_type": "Store"
+              }
+            }
+          ],
+          "value": {
+            "_type": "Call",
+            "func": {
+              "_type": "Name",
+              "id": "int",
+              "ctx": {
+                "_type": "Load"
+              }
+            },
+            "args": [
+              {
+                "_type": "BinOp",
+                "left": {
+                  "_type": "Call",
+                  "func": {
+                    "_type": "Attribute",
+                    "value": {
+                      "_type": "Name",
+                      "id": "time",
+                      "ctx": {
+                        "_type": "Load"
+                      }
+                    },
+                    "attr": "time",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                },
+                "op": {
+                  "_type": "Mult"
+                },
+                "right": {
+                  "_type": "Constant",
+                  "value": 1000,
+                  "kind": null
+                }
+              }
+            ],
+            "keywords": []
+          },
+          "type_comment": null
+        },
+        {
+          "_type": "Assign",
+          "targets": [
+            {
+              "_type": "Name",
+              "id": "window",
+              "ctx": {
+                "_type": "Store"
+              }
+            }
+          ],
+          "value": {
+            "_type": "BinOp",
+            "left": {
+              "_type": "Constant",
+              "value": 10,
+              "kind": null
+            },
+            "op": {
+              "_type": "Mult"
+            },
+            "right": {
+              "_type": "Constant",
+              "value": 1000,
+              "kind": null
+            }
+          },
+          "type_comment": null
+        },
+        {
+          "_type": "Assign",
+          "targets": [
+            {
+              "_type": "Name",
+              "id": "timestamps",
+              "ctx": {
+                "_type": "Store"
+              }
+            }
+          ],
+          "value": {
+            "_type": "Call",
+            "func": {
+              "_type": "Attribute",
+              "value": {
+                "_type": "Name",
+                "id": "hits",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              "attr": "get",
+              "ctx": {
+                "_type": "Load"
+              }
+            },
+            "args": [
+              {
+                "_type": "Name",
+                "id": "ip",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              {
+                "_type": "List",
+                "elts": [],
+                "ctx": {
+                  "_type": "Load"
+                }
+              }
+            ],
+            "keywords": []
+          },
+          "type_comment": null
+        },
+        {
+          "_type": "While",
+          "test": {
+            "_type": "BoolOp",
+            "op": {
+              "_type": "And"
+            },
+            "values": [
+              {
+                "_type": "Name",
+                "id": "timestamps",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              {
+                "_type": "Compare",
+                "left": {
+                  "_type": "BinOp",
+                  "left": {
+                    "_type": "Name",
+                    "id": "now",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  },
+                  "op": {
+                    "_type": "Sub"
+                  },
+                  "right": {
+                    "_type": "Subscript",
+                    "value": {
+                      "_type": "Name",
+                      "id": "timestamps",
+                      "ctx": {
+                        "_type": "Load"
+                      }
+                    },
+                    "slice": {
+                      "_type": "Constant",
+                      "value": 0,
+                      "kind": null
+                    },
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  }
+                },
+                "ops": [
+                  {
+                    "_type": "Gt"
+                  }
+                ],
+                "comparators": [
+                  {
+                    "_type": "Name",
+                    "id": "window",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "body": [
+            {
+              "_type": "Expr",
+              "value": {
+                "_type": "Call",
+                "func": {
+                  "_type": "Attribute",
+                  "value": {
+                    "_type": "Name",
+                    "id": "timestamps",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  },
+                  "attr": "pop",
+                  "ctx": {
+                    "_type": "Load"
+                  }
+                },
+                "args": [
+                  {
+                    "_type": "Constant",
+                    "value": 0,
+                    "kind": null
+                  }
+                ],
+                "keywords": []
+              }
+            }
+          ],
+          "orelse": []
+        },
+        {
+          "_type": "If",
+          "test": {
+            "_type": "Compare",
+            "left": {
+              "_type": "Call",
+              "func": {
+                "_type": "Name",
+                "id": "len",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              "args": [
+                {
+                  "_type": "Name",
+                  "id": "timestamps",
+                  "ctx": {
+                    "_type": "Load"
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "ops": [
+              {
+                "_type": "GtE"
+              }
+            ],
+            "comparators": [
+              {
+                "_type": "Constant",
+                "value": 5,
+                "kind": null
+              }
+            ]
+          },
+          "body": [
+            {
+              "_type": "Return",
+              "value": {
+                "_type": "Constant",
+                "value": false,
+                "kind": null
+              }
+            },
+            {
+              "_type": "Assign",
+              "targets": [
+                {
+                  "_type": "Name",
+                  "id": "debug_obj",
+                  "ctx": {
+                    "_type": "Store"
+                  }
+                }
+              ],
+              "value": {
+                "_type": "Dict",
+                "keys": [
+                  {
+                    "_type": "Constant",
+                    "value": "ip",
+                    "kind": null
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": "blockedAt",
+                    "kind": null
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": "reason",
+                    "kind": null
+                  }
+                ],
+                "values": [
+                  {
+                    "_type": "Name",
+                    "id": "ip",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  },
+                  {
+                    "_type": "Name",
+                    "id": "now",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  },
+                  {
+                    "_type": "Constant",
+                    "value": "RATE_LIMIT",
+                    "kind": null
+                  }
+                ]
+              },
+              "type_comment": null
+            },
+            {
+              "_type": "Expr",
+              "value": {
+                "_type": "Call",
+                "func": {
+                  "_type": "Name",
+                  "id": "print",
+                  "ctx": {
+                    "_type": "Load"
+                  }
+                },
+                "args": [
+                  {
+                    "_type": "Constant",
+                    "value": "This will NEVER be logged",
+                    "kind": null
+                  },
+                  {
+                    "_type": "Name",
+                    "id": "debug_obj",
+                    "ctx": {
+                      "_type": "Load"
+                    }
+                  }
+                ],
+                "keywords": []
+              }
+            }
+          ],
+          "orelse": []
+        },
+        {
+          "_type": "Expr",
+          "value": {
+            "_type": "Call",
+            "func": {
+              "_type": "Attribute",
+              "value": {
+                "_type": "Name",
+                "id": "timestamps",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              "attr": "append",
+              "ctx": {
+                "_type": "Load"
+              }
+            },
+            "args": [
+              {
+                "_type": "Name",
+                "id": "now",
+                "ctx": {
+                  "_type": "Load"
+                }
+              }
+            ],
+            "keywords": []
+          }
+        },
+        {
+          "_type": "Assign",
+          "targets": [
+            {
+              "_type": "Subscript",
+              "value": {
+                "_type": "Name",
+                "id": "hits",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              "slice": {
+                "_type": "Name",
+                "id": "ip",
+                "ctx": {
+                  "_type": "Load"
+                }
+              },
+              "ctx": {
+                "_type": "Store"
+              }
+            }
+          ],
+          "value": {
+            "_type": "Name",
+            "id": "timestamps",
+            "ctx": {
+              "_type": "Load"
+            }
+          },
+          "type_comment": null
+        },
+        {
+          "_type": "Return",
+          "value": {
+            "_type": "Constant",
+            "value": true,
+            "kind": null
+          }
+        },
+        {
+          "_type": "Assign",
+          "targets": [
+            {
+              "_type": "Name",
+              "id": "fake_counter",
+              "ctx": {
+                "_type": "Store"
+              }
+            }
+          ],
+          "value": {
+            "_type": "Constant",
+            "value": 0,
+            "kind": null
+          },
+          "type_comment": null
+        },
+        {
+          "_type": "For",
+          "target": {
+            "_type": "Name",
+            "id": "i",
+            "ctx": {
+              "_type": "Store"
+            }
+          },
+          "iter": {
+            "_type": "Call",
+            "func": {
+              "_type": "Name",
+              "id": "range",
+              "ctx": {
+                "_type": "Load"
+              }
+            },
+            "args": [
+              {
+                "_type": "Constant",
+                "value": 1000000,
+                "kind": null
+              }
+            ],
+            "keywords": []
+          },
+          "body": [
+            {
+              "_type": "AugAssign",
+              "target": {
+                "_type": "Name",
+                "id": "fake_counter",
+                "ctx": {
+                  "_type": "Store"
+                }
+              },
+              "op": {
+                "_type": "Add"
+              },
+              "value": {
+                "_type": "Name",
+                "id": "i",
+                "ctx": {
+                  "_type": "Load"
+                }
+              }
+            }
+          ],
+          "orelse": [],
+          "type_comment": null
+        }
+      ],
+      "decorator_list": [],
+      "returns": null,
+      "type_comment": null
+    }
+  ],
+  "type_ignores": []
+}
